@@ -59,7 +59,7 @@ fun DetalleView (
                 navigationIcon = {
                     IconButton(
                         onClick = {
-                            onAction(DetalleIntencion.CargarContenido)
+                            onAction(DetalleIntencion.IrParaAtras)
                         }
                     ) {
                         Icon(
@@ -74,7 +74,7 @@ fun DetalleView (
     ) {
         Column(modifier = modifier.padding(it)) {
             when (state) {
-                DetalleEstado.Cargando -> Text(text = "aca deberia haber un loading")
+                DetalleEstado.Cargando -> Cargando()
                 is DetalleEstado.Error -> Text(text = state.mensaje)
                 is DetalleEstado.Resultado -> Contenido( state.cuidado )
                 DetalleEstado.Vacio -> Text(text = "")

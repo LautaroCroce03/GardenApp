@@ -81,7 +81,7 @@ fun ListaDeSignosView(plantas: List<Planta>, onSelect: (Planta)->Unit){
                     .fillMaxWidth(),
                 colors = CardDefaults.cardColors(
                     contentColor = MaterialTheme.colorScheme.secondary,
-                    containerColor = Pink40
+                    containerColor = MaterialTheme.colorScheme.secondaryContainer
                 ),
                 onClick = {
                     onSelect(planta)
@@ -103,7 +103,7 @@ fun ListaDeSignosView(plantas: List<Planta>, onSelect: (Planta)->Unit){
                         Text(
                             modifier = Modifier.padding(10.dp),
                             style = MaterialTheme.typography.titleMedium,
-                            text = ""
+                            text = planta.nombre
                         )
                         Text(
                             modifier = Modifier.padding(horizontal = 10.dp),
@@ -118,7 +118,7 @@ fun ListaDeSignosView(plantas: List<Planta>, onSelect: (Planta)->Unit){
                         Text(
                             modifier = Modifier.padding(10.dp),
                             style = MaterialTheme.typography.bodyMedium,
-                            text = ""
+                            text = planta.descripcion
                         )
                     }
                 }
